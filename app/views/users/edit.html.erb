@@ -1,0 +1,16 @@
+<% provide(:title, "Edit user") %>
+<h1>更新资料</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+
+      <%= render 'fields', f: f %>
+ 
+      <%= f.submit "保存", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <%= gravatar_for (@user) %>
+    <a href="http://gravatar.com/emails" target="_blank">更改头像</a>
+  </div>
+</div>

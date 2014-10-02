@@ -1,0 +1,6 @@
+<% if signed_in? %>
+
+<%= render 'shared/micropost_feed' %>
+<% else %>
+ <%= render 'shared/welcome' %>
+<% end %>

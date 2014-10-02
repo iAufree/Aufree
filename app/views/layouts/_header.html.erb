@@ -1,0 +1,57 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Aufree", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li>
+            <%= link_to root_path do %>
+              <i class="fa fa-home"></i>主页
+            <% end %>
+          </li>
+          <li>
+            <%= link_to help_path do %>
+              <i class="fa fa-paper-plane"></i>帮助
+            <% end %>
+          </li>
+          <% if signed_in? %>
+            <li>
+              <%= link_to users_path do %>
+                <i class="fa fa-users"></i>用户
+              <% end %>
+            </li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-anchor"></i>
+                账户 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to current_user do %>
+                   <i class="fa fa-book"></i>资料
+                  <% end %>
+                </li>
+                <li><%= link_to edit_user_path(current_user) do %>
+                  <i class="fa fa-cog"></i>设置
+                  <% end %>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to signout_path, method: "delete" do %>
+                    <i class="fa fa-power-off"></i>退出
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to signin_path do %>
+                <i class="fa fa-sign-in"></i>登录
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

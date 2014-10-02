@@ -1,0 +1,12 @@
+<% provide(:title, 'Sign up') %>
+<h1>注册</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'fields', f: f %>
+
+      <%= f.submit "完成注册", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

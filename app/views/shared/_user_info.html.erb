@@ -1,0 +1,6 @@
+<a class="user-gravatar" href="<%= user_path(current_user) %>">
+  <%= gravatar_for current_user, size: 460 %>
+</a>
+<h1>
+  <%= current_user.name %>
+</h1>

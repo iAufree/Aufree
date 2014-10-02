@@ -1,0 +1,13 @@
+<li>
+	<span class="content"><%= micropost.content %></span>
+	<div class="feed-item-right">
+		<span class="timestamp">
+			在<%= time_ago_in_words(micropost.created_at) %>前发布
+		</span>
+		<% if current_user?(micropost.user) %>
+		<%= link_to "X", micropost, method: :delete,
+		data: { confirm: "您确定要删除该微博?" },
+		title: "删除微博" %>
+		<% end %>
+	</div>
+</li>
